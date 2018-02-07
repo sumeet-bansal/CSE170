@@ -3,33 +3,65 @@
     <title>Triton Meal Planner</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="padding-bottom: 50px;">
         <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
         <!-- p means paragraph -->
         <div class="page-header text-center">
             <a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
         </div>
 
-
-
-        <div class="container">
-            <!--TODO-->
-            <h4>RESULTS</h4>
+        <div class="container text-center">
+            <h4>Here's your custom meal plan</h4>
+            <h4>with 1900 calories at $14.00.</h4>
         </div>
 
-
-
-        <div class=" navbar navbar-fixed-bottom">
-            <div class="row" id="bottomNav">
-                <div class="col-xs-4 text-center"><a href="login">login</a></div>
-                <div class="col-xs-4 text-center"><a href="help">help</a></div>
-                <div class="col-xs-4 text-center"><a href="about">about</a></div>
+        <div class="card text-left">
+            <div class="card-body">
+                <h5 class="card-title">Meal 1</h5>
+                <h6 class="card-subtitle mb-2 text-muted">400 calories, $2.50</h6>
+                <h2 class="card-text text-center">Nutella Gone Bananas Spread</h2>
+                <h6 class="card-subtitle mb-2 text-muted text-center">from Oceanview Terrace</h6>
+                <a href="#" class="card-link text-center"><h5>Swap Out</h5></a>
             </div>
         </div>
+
+        <div class="card text-left">
+            <div class="card-body">
+                <h5 class="card-title">Meal 2</h5>
+                <h6 class="card-subtitle mb-2 text-muted">1000 calories, $6.25</h6>
+                <h2 class="card-text text-center">La Cantina Burrito</h2>
+                <h6 class="card-subtitle mb-2 text-muted text-center">from Pines</h6>
+                <a href="#" class="card-link text-center"><h5>Swap Out</h5></a>
+            </div>
+        </div>
+
+        <div class="card text-left">
+            <div class="card-body">
+                <h5 class="card-title">Meal 3</h5>
+                <h6 class="card-subtitle mb-2 text-muted">500 calories, $5.25</h6>
+                <h2 class="card-text text-center">Chipotle Black Bean Burger</h2>
+                <h6 class="card-subtitle mb-2 text-muted text-center">from Pines</h6>
+                <a href="#" class="card-link text-center"><h5>Swap Out</h5></a>
+            </div>
+        </div>
+
+        <div class="row col-12 text-center justify-content-center" style="padding-top: 10px;">
+            <a role="button" class="btn btn-lg col-5 btn-outline-secondary" href="results">Generate Another</a>
+            <div class="col-1"></div>
+            <a role="button" class="btn btn-lg col-5 btn-outline-secondary" href="/">Start Over</a>
+        </div>
+
+        <div class="navbar fixed-bottom bg-light">
+            <div class="row col-12" id="bottomNav">
+                <div class="col-4 text-center"><a href="login">login</a></div>
+                <div class="col-4 text-center"><a href="help">help</a></div>
+                <div class="col-4 text-center"><a href="about">about</a></div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
