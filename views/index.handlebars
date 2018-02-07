@@ -1,8 +1,72 @@
 <html>
 <head>
-	<title>Test Page</title>
+	<title>Triton Meal Planner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
-Begin here (or replace this with any static code already written).
+    <div class="container">
+    <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+    <!-- p means paragraph -->
+        <div class="page-header text-center">
+            <h1>Triton Meal Planner</h1>
+        </div>
+        <div class="container">
+            <h3>
+                I am looking for
+
+                <select class="form-inline">
+                    <option value="select">any</option>
+                    <option>vegetarian</option>
+                    <option>vegan</option>
+                </select>
+                food, within
+
+                <select class="form-inline">
+                    <option value="select">UCSD</option>
+                    <option>Revelle</option>
+                    <option>Muir</option>
+                    <option>Warren</option>
+                    <option>Sixth</option>
+                    <option>ERC</option>
+                    <option>Marshall</option>
+                </select>
+
+                . I want to eat
+                    <select class="form-inline">
+                        <option>1</option>
+                        <option>2</option>
+                        <option value="select">3</option>
+                        <option>4</option>
+                    </select>
+
+
+                 meals today between
+                <input class="form-inline small" type="number" placeholder="1800">
+                and
+                <input class="form-inline small" type="number" placeholder="2200">
+                total calories, and spend fewer than
+                <input class="form-inline small" type="number" placeholder="15">
+                dining dollars.
+            </h3>
+        </div>
+        <br>
+        <div class="container text-center">
+            <a href="results">
+                <button type="button" class="btn btn-primary"> generate meal plan</button>
+            </a>
+        </div>
+
+
+        <div class=" navbar navbar-fixed-bottom">
+            <div class="row" id="bottomNav">
+                <div class="col-xs-4 text-center"><a href="login">login</a></div>
+                <div class="col-xs-4 text-center"><a href="help">help</a></div>
+                <div class="col-xs-4 text-center"><a href="about">about</a></div>
+                </div>
+            </div>
+    </div>
 </body>
 </html>
