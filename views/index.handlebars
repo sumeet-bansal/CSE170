@@ -1,67 +1,69 @@
 <html>
 <head>
-    <title>Triton Meal Planner</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<title>Triton Meal Planner</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container" style="padding-bottom: 50px;">
-    <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-    <!-- p means paragraph -->
-    <div class="page-header text-center">
-        <a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
-    </div>
+	<div class="container" style="padding-bottom: 50px;">
+		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+		<!-- p means paragraph -->
+		<div class="page-header text-center">
+			<a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
+		</div>
 
-    <div class="container" style="padding-top: 5%">
-            <h4>
-                I am looking for
-                <select class="form-group">
-                    <option value="select">any</option>
-                    <option>vegetarian</option>
-                    <option>vegan</option>
-                </select>
-                food, within
-                <select class="form-group">
-                    <option value="select">UCSD</option>
-                    <option>Revelle</option>
-                    <option>Muir</option>
-                    <option>Warren</option>
-                    <option>Sixth</option>
-                    <option>ERC</option>
-                    <option>Marshall</option>
-                </select>
-                . I want to eat
-                    <select class="form-group">
-                        <option>1</option>
-                        <option>2</option>
-                        <option value="select">3</option>
-                        <option>4</option>
-                    </select>
-                 meals today between
-                <input class="form-group col-4" type="number" placeholder="1800">
-                and
-                <input class="form-group col-4" type="number" placeholder="2200">
-                total calories, and spend fewer than
-                <input class="form-group col-4" type="number" placeholder="15">
-                dining dollars.
-            </h4>
-        </div>
-        <br>
-        <div class="container text-center">
-            <a href="results">
-                <button type="button" class="btn btn-primary"> generate meal plan</button>
-            </a>
-        </div>
+		<form id="prefsForm" role="form" method="get" action="/submit">
+			<div class="container" style="padding-top: 5%">
+				<h4>
+					I am looking for
+					<select class="form-group" name="dietary">
+						<option>any</option>
+						<option>vegetarian</option>
+						<option>vegan</option>
+					</select>
+					food, within
+					<select class="form-group" name="location">
+						<option>UCSD</option>
+						<option>Revelle</option>
+						<option>Muir</option>
+						<option>Warren</option>
+						<option>Sixth</option>
+						<option>ERC</option>
+						<option>Marshall</option>
+					</select>
+					. I want to eat
+						<select class="form-group" name="meals">
+							<option>1</option>
+							<option>2</option>
+							<option selected="selected">3</option>
+							<option>4</option>
+						</select>
+					 meals today between
+					<input class="form-group col-4" type="number" placeholder="1800" name="min">
+					and
+					<input class="form-group col-4" type="number" placeholder="2400" name="max">
+					total calories, and spend fewer than
+					<input class="form-group col-4" type="number" placeholder="15" name="price">
+					dining dollars.
+				</h4>
+			</div>
+			<br>
+			<div class="container text-center">
+				<a href="results">
+					<input type="submit" id="submitBtn" class="btn btn-primary" value="generate meal plan"></input>
+				</a>
+			</div>
+		</form>
 
 
-        <div class="navbar fixed-bottom bg-light">
-            <div class="row col-12" id="bottomNav">
-                <div class="col-4 text-center"><a href="login">login</a></div>
-                <div class="col-4 text-center"><a href="help">help</a></div>
-                <div class="col-4 text-center"><a href="about">about</a></div>
-            </div>
-        </div>
-    </div>
+		<div class="navbar fixed-bottom bg-light">
+			<div class="row col-12" id="bottomNav">
+				<div class="col-4 text-center"><a href="login">login</a></div>
+				<div class="col-4 text-center"><a href="help">help</a></div>
+				<div class="col-4 text-center"><a href="about">about</a></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
