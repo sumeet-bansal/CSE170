@@ -1,26 +1,24 @@
 {
-  "name": "IntroHCI",
-  "version": "0.0.1",
-  "author": "Intro HCI Staff",
+	"name": "triton-meal-planner",
+	"version": "0.0.1",
+	"author": "Sumeet Bansal",
 
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
-  },
-  "license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sumeet-bansal/CSE170"
+	},
+	"license": "MIT",
 
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "3.x",
-    "express3-handlebars": "*",
-    "mongodb": "*",
-    "mongoose": "*",
-    "sqlite3": "*"
-  },
-  "engines": {
-    "node": "0.10.x"
-  }  
+	"private": true,
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"express": "3.x",
+		"express3-handlebars": "*",
+		"sqlite3": "*"
+	},
+	"engines": {
+		"node": "0.10.x"
+	}
 }
