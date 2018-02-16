@@ -1,0 +1,24 @@
+{
+	"sum" : 1900,
+	"budget" : "14.00",
+	"meals": [
+		{
+			"item" : "Nutella Gone Bananas Spread",
+			"location" : "Oceanview Terrace",
+			"calories" : 400,
+			"price" : "2.50"
+		},
+		{
+			"item" : "La Cantina Burrito",
+			"location" : "Pines",
+			"calories" : 1000,
+			"price" : "6.25"
+		},
+		{
+			"item" : "Chipotle Black Bean Burger",
+			"location" : "Pines",
+			"calories" : 500,
+			"price" : "5.25"
+		}
+	]
+}

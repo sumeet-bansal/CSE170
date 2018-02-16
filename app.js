@@ -8,6 +8,12 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+var hbs = handlebars.create({
+	helpers: {
+		inc: function(value) { return parseInt(value) + 1; }
+	}
+});
+
 var index = require('./routes/index');
 var help = require('./routes/help');
 var about = require('./routes/about');
@@ -22,6 +28,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
+app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));

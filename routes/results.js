@@ -1,8 +1,9 @@
-
 /*
  * GET home page.
  */
 
-exports.view = function(req, res){
-    res.render('results');
+var data = require('../data.json');
+
+exports.view = function(req, res) {
+	res.render('results', data);
 };
