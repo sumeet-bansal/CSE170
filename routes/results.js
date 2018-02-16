@@ -23,6 +23,7 @@ exports.generatePlan = function(req, res) {
 			db.each(sql, function(err, row) {
 				sum += row.calories;
 				budget += row.price;
+				row.price = row.price.toFixed(2);
 				delete row.dietary;
 				row.maplink = getMapLink(row.location);
 				row.location = getDiningHall(row.location);
@@ -30,7 +31,7 @@ exports.generatePlan = function(req, res) {
 			}, function() {
 				data = {
 					"sum" : sum,
-					"budget" : budget,
+					"budget" : budget.toFixed(2),
 					"meals" : meals
 				}
 				console.log(data);
