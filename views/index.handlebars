@@ -13,45 +13,50 @@
 			<a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
 		</div>
 
-		<form id="prefsForm" role="form" method="get" action="/submit">
+		<form id="prefsForm" role="form" method="GET" action="/submit">
 			<div class="container" style="padding-top: 5%">
-				<h4>
-					I am looking for
-					<select class="form-group" name="dietary">
-						<option>any</option>
-						<option>vegetarian</option>
-						<option>vegan</option>
-					</select>
-					food, within
-					<select class="form-group" name="location">
-						<option>UCSD</option>
-						<option>Revelle</option>
-						<option>Muir</option>
-						<option>Warren</option>
-						<option>Sixth</option>
-						<option>ERC</option>
-						<option>Marshall</option>
-					</select>
-					. I want to eat
-						<select class="form-group" name="meals">
-							<option>1</option>
-							<option>2</option>
-							<option selected="selected">3</option>
-							<option>4</option>
-						</select>
-					 meals today between
-					<input class="form-group col-4" type="number" placeholder="1800" name="min">
-					and
-					<input class="form-group col-4" type="number" placeholder="2400" name="max">
-					total calories, and spend fewer than
-					<input class="form-group col-4" type="number" placeholder="15" name="price">
-					dining dollars.
-				</h4>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10">
+						<h4>
+							I am looking for
+							<select class="form-group" name="dietary">
+								<option>any</option>
+								<option>vegetarian</option>
+								<option>vegan</option>
+							</select>
+							food, within
+							<select class="form-group" name="location">
+								<option>UCSD</option>
+								<option>Revelle</option>
+								<option>Muir</option>
+								<option>Warren</option>
+								<option>Sixth</option>
+								<option>ERC</option>
+								<option>Marshall</option>
+							</select>
+							. I want to eat
+								<select class="form-group" name="meals">
+									<option>1</option>
+									<option>2</option>
+									<option selected="selected">3</option>
+									<option>4</option>
+								</select>
+							 meals today between
+							<input class="form-group col-4" type="number" placeholder="1800" name="min">
+							and
+							<input class="form-group col-4" type="number" placeholder="2400" name="max">
+							total calories, and spend fewer than
+							<input class="form-group col-4" type="number" placeholder="15" name="price">
+							dining dollars.
+						</h4>
+					</div>
+				</div>
 			</div>
 			<br>
 			<div class="container text-center">
 				<a href="results">
-					<input type="submit" id="submitBtn" class="btn btn-primary" value="generate meal plan"></input>
+					<input type="submit" id="submitBtn" class="btn btn-lg btn-outline-secondary" value="Generate" style="width: 40%;"></input>
 				</a>
 			</div>
 		</form>
