@@ -25,6 +25,8 @@ exports.generatePlan = function(req, res) {
 				sum += row.calories;
 				budget += row.price;
 				delete row.dietary;
+				row.location = getDiningHall(prefs.location);
+				row.maplink = getMapLink(prefs.location);
 				meals.push(row);
 			}, function() {
 				data = {
@@ -38,4 +40,38 @@ exports.generatePlan = function(req, res) {
 		});
 	});
 	db.close();
+}
+
+function getDiningHall(loc) {
+	switch(loc) {
+		case 'Sixth':
+			return 'Foodworx';
+		case 'Warren':
+			return 'Earl\'s';
+		case 'Revelle':
+			return '64 Degrees';
+		case 'Muir':
+			return 'Pines';
+		case 'Marshall':
+			return 'Goody\'s';
+		case 'ERC':
+			return 'Cafe Ventanas';
+	}
+}
+
+function getMapLink(loc) {
+	switch(loc) {
+		case 'Sixth':
+			return 'https://goo.gl/maps/pWcSXinwTCQ2';
+		case 'Warren':
+			return 'https://goo.gl/maps/mfnC7jZGv892';
+		case 'Revelle':
+			return 'https://goo.gl/maps/mj7jS2dPE7t';
+		case 'Muir':
+			return 'https://goo.gl/maps/CK7ycn3qKwG2';
+		case 'Marshall':
+			return 'https://goo.gl/maps/FiEDAfieYpm';
+		case 'ERC':
+			return 'https://goo.gl/maps/BWL5Bp1J1xo';
+	}
 }
