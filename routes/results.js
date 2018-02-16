@@ -1,5 +1,3 @@
-var data = require('../data.json');
-
 var sqlite3 = require('sqlite3').verbose();
 var fs = require('fs');
 
@@ -18,7 +16,8 @@ exports.generatePlan = function(req, res) {
 			var max = prefs.max;
 			var price = prefs.price;
 			var calories = ' AND calories > ' + min/num + ' AND calories < ' + max/num;
-			sql = 'SELECT * FROM items WHERE' + dietary + location + calories + ' LIMIT ' + num;
+			var sorted = ' ORDER BY calories DESC LIMIT ' + num;
+			sql = 'SELECT * FROM items WHERE' + dietary + location + calories + sorted;
 			console.log(sql);
 			var meals = [], sum = 0, budget = 0;
 			db.each(sql, function(err, row) {
