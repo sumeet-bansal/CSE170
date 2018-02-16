@@ -24,8 +24,8 @@ exports.generatePlan = function(req, res) {
 				sum += row.calories;
 				budget += row.price;
 				delete row.dietary;
-				row.location = getDiningHall(prefs.location);
-				row.maplink = getMapLink(prefs.location);
+				row.maplink = getMapLink(row.location);
+				row.location = getDiningHall(row.location);
 				meals.push(row);
 			}, function() {
 				data = {
