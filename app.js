@@ -6,7 +6,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
 
 var hbs = handlebars.create({
 	helpers: {
@@ -53,6 +53,7 @@ app.get('/about', about.view);
 app.get('/help', help.view);
 app.get('/login', login.view);
 app.get('/results', results.view);
+app.get('/submit', results.generatePlan);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
