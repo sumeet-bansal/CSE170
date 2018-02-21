@@ -6,70 +6,77 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container" style="padding-bottom: 50px;">
-	<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-	<!-- p means paragraph -->
-	<div class="page-header text-center">
-		<a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
-	</div>
+	<div class="container" style="padding-bottom: 50px;">
+		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+		<!-- p means paragraph -->
+		<div class="page-header text-center">
+			<a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
+		</div>
 
-	<div class="container">
-		<form class="form-horizontal" action="/">
-			<div class="row justify-content-center" style="margin-top: 20%;">
-				<div class="col-md-6">
-					<h2>Login</h2>
+		<div class="container">
+			<form class="form-horizontal" action="/">
+				<div class="row justify-content-center" style="margin-top: 20%;">
+					<div class="col-md-5">
+						<h2>Login</h2>
+					</div>
+					<div class="col-md-1">
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="margin-top: 20%;">
+						</fb:login-button>
+					</div>
 				</div>
-			</div>
-			<div class="row" style="margin-top: 1%;">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<div class="form-group has-danger">
-						<label class="sr-only" for="email">E-Mail Address</label>
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon"><i class="fa fa-at"></i></div>
-							<input type="text" name="email" class="form-control" id="email"
-								placeholder="username" required autofocus>
+				<div class="row" style="margin-top: 1%;">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<div class="form-group has-danger">
+							<label class="sr-only" for="email">E-Mail Address</label>
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+								<div class="input-group-addon"><i class="fa fa-at"></i></div>
+								<input type="text" name="email" class="form-control" id="email"
+									placeholder="username" required autofocus>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label class="sr-only" for="password">Password</label>
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon"><i class="fa fa-key"></i></div>
-							<input type="password" name="password" class="form-control" id="password"
-								   placeholder="password" required>
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="sr-only" for="password">Password</label>
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+								<div class="input-group-addon"><i class="fa fa-key"></i></div>
+								<input type="password" name="password" class="form-control" id="password"
+									   placeholder="password" required>
+							</div>
 						</div>
 					</div>
+					<!-- div class="col-md-3">
+						<div class="form-control-feedback">
+							<span class="text-danger align-middle">
+								Invalid credentials.
+							</span>
+						</div>
+					</div -->
 				</div>
-				<!-- div class="col-md-3">
-					<div class="form-control-feedback">
-						<span class="text-danger align-middle">
-							Invalid credentials.
-						</span>
+				<div class="row" style="margin-top: 2%;">
+					<div class="col-md-3"></div>
+					<div class="col-md-6 text-center">
+						<button type="submit" class="btn btn-success" style="width: 100%;"><i class="fa fa-sign-in"></i>Submit</button>
 					</div>
-				</div -->
-			</div>
-			<div class="row" style="margin-top: 2%;">
-				<div class="col-md-3"></div>
-				<div class="col-md-6 text-center">
-					<button type="submit" class="btn btn-success" style="width: 100%;"><i class="fa fa-sign-in"></i>Submit</button>
 				</div>
+			</form>
+		</div>
+
+		<div class="navbar fixed-bottom bg-light">
+			<div class="row col-12" id="bottomNav">
+				<div class="col-4 text-center"><a href="login">login</a></div>
+				<div class="col-4 text-center"><a href="help">help</a></div>
+				<div class="col-4 text-center"><a href="about">about</a></div>
 			</div>
-		</form>
-	</div>
-
-
-	<div class="navbar fixed-bottom bg-light">
-		<div class="row col-12" id="bottomNav">
-			<div class="col-4 text-center"><a href="login">login</a></div>
-			<div class="col-4 text-center"><a href="help">help</a></div>
-			<div class="col-4 text-center"><a href="about">about</a></div>
 		</div>
 	</div>
-</div>
+
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+
 </body>
 </html>
