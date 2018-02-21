@@ -21,6 +21,7 @@ exports.generatePlan = function(req, res) {
 			console.log(sql);
 			var meals = [], sum = 0, budget = 0;
 			db.each(sql, function(err, row) {
+				console.log(row);
 				sum += row.calories;
 				budget += row.price;
 				row.price = row.price.toFixed(2);
@@ -29,13 +30,19 @@ exports.generatePlan = function(req, res) {
 				row.location = getDiningHall(row.location);
 				meals.push(row);
 			}, function() {
-				data = {
-					"sum" : sum,
-					"budget" : budget.toFixed(2),
-					"meals" : meals
+				if (meals.length >= num) {
+					data = {
+						"sum" : sum,
+						"budget" : budget.toFixed(2),
+						"meals" : meals
+					}
+					console.log(data);
+					res.render('results', data);
+				} else {
+					console.log("Unable to construct meal plan within given parameters:");
+					console.log(prefs);
+					res.render('error');
 				}
-				console.log(data);
-				res.render('results', data);
 			});
 		});
 	});

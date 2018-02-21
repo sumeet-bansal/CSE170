@@ -14,13 +14,13 @@ var hbs = handlebars.create({
 	}
 });
 
+// example route: var user = require('./routes/user');
 var index = require('./routes/index');
 var help = require('./routes/help');
 var about = require('./routes/about');
 var login = require('./routes/login');
 var results = require('./routes/results');
-// Example route
-// var user = require('./routes/user');
+var error = require('./routes/error');
 
 var app = express();
 
@@ -54,6 +54,7 @@ app.get('/help', help.view);
 app.get('/login', login.view);
 app.get('/results', results.view);
 app.get('/submit', results.generatePlan);
+app.get('/error', error.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
