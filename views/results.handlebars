@@ -20,11 +20,11 @@
 		{{#each meals}}
 		<div class="card text-left">
 			<div class="card-body">
-				<h5 class="card-title">Meal {{inc @index}}</h5>
-				<h6 class="card-subtitle mb-2 text-muted">{{calories}} calories, ${{price}}</h6>
-				<h2 class="card-text text-center">{{item}}</h2>
-				<h6 class="card-subtitle mb-2 text-muted text-center">from <a href="{{maplink}}">{{location}}</a></h6>
-				<a href="#" class="card-link text-center"><h5>Swap Out</h5></a>
+				<h5 class="card-title meal-index">Meal {{inc @index}}</h5>
+				<h6 class="card-subtitle mb-2 text-muted meal-details">{{calories}} calories, ${{price}}</h6>
+				<h2 class="card-text text-center meal-title">{{item}}</h2>
+				<h6 class="card-subtitle mb-2 text-muted text-center meal-loc">from <a href="{{maplink}}">{{location}}</a></h6>
+				<a href="#" class="card-link text-center swap-link"><h5>Swap Out</h5></a>
 			</div>
 		</div>
 		{{/each}}
@@ -47,5 +47,9 @@
 		</div>
 
 	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/swapper.js"></script>
+
 </body>
 </html>
