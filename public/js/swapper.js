@@ -27,11 +27,19 @@ function swap(e) {
 	calsum -= calories;
 	pricesum -= price;
 
-	var reqlink = '/submit?dietary=&location=&meals=1&min=' + (calories-100) + '&max=' + (calories+100);
+	var dietary = $('#dietary').text();
+	var location = $('#location').text();
+	var min = parseInt($('#lower-bound').text());
+	var max = parseInt($('#upper-bound').text());
+
+	min -= calsum;
+	max -= calsum;
+
+	var reqlink = '/submit?dietary=' + dietary + '&location=' + location + '&meals=1&min=' + min + '&max=' + max;
+
 	$.get(reqlink, function(result) {
 		result = $(result).find('.card-body');
 		result.find('.meal-index').text(el.find('.meal-index').text());
-		console.log(result.html())
 		el.html(result.html());
 		el.find('.swap-link').click(swap);
 

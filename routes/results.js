@@ -34,7 +34,8 @@ exports.generatePlan = function(req, res) {
 					data = {
 						"sum" : sum,
 						"budget" : budget.toFixed(2),
-						"meals" : meals
+						"meals" : meals,
+						"prefs" : prefs
 					}
 					console.log(data);
 					res.render('results', data);
