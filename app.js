@@ -55,6 +55,9 @@ app.get('/login', login.view);
 app.get('/results', results.view);
 app.get('/submit', results.generatePlan);
 app.get('/error', error.view);
+app.get('*', function(req, res) {
+	res.render('404', 404);
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
