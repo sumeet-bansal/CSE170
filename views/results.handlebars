@@ -1,17 +1,41 @@
 <html>
 <head>
-	<title>Triton Meal Planner</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Triton Meal Planner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/tritonmealplanner.css">
 </head>
 <body>
 	<div class="container" style="padding-bottom: 50px;">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
-		<div class="page-header text-center">
-			<a href="/" style="color: #000;"><h1>Triton Meal Planner</h1></a>
-		</div>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <h2><a class="navbar-brand" href="/">Triton Meal Planner</a></h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/help">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 		<div class="container text-center summary">
 			<h4>Here's your custom meal plan with {{sum}} calories at ${{budget}}.</h4>
@@ -39,14 +63,6 @@
 		<div class="row justify-content-center text-center" style="padding-top: 10px;">
 			<div class="col-6">
 				<a role="button" class="btn btn-lg btn-outline-secondary" href="/" style="width: 100%;">Start Over</a>
-			</div>
-		</div>
-
-		<div class="navbar fixed-bottom bg-light">
-			<div class="row col-12" id="bottomNav">
-				<div class="col-4 text-center"><a href="login">login</a></div>
-				<div class="col-4 text-center"><a href="help">help</a></div>
-				<div class="col-4 text-center"><a href="about">about</a></div>
 			</div>
 		</div>
 
