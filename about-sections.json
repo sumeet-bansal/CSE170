@@ -25,7 +25,7 @@
 			"text": "The basic idea is that users (UCSD students) can input meal preferences (e.g. \"vegetarian\" within \"Muir + Revelle + Marshall\", \"2\" meals under \"1500\" calories and \"12\" dollars). From these preferences, the mobile web-app formulates a meal plan for the day (e.g. \"a Goody's breakfast burrito\" + \"a taco salad from Pines' Cantina\")."
 		},
 		{
-			"title": "Alignment with Studio Brief (Automation)",
+			"title": "Alignment with Studio",
 			"text": "As explained in the POV, constructing a meal plan (or even planning for a single meal) is a difficult and tedious process that involves navigating through multiple links on the HDH website before finally settling on something. This web-app automates the process of navigating through the HDH website and creating a meal plan that fits the given parameters (price point, dietary/caloric restrictions, location preferences, etc.) to save users time daily. The core interaction itself is an automation of this process since it only involves setting preferences as opposed to keeping these preferences in mind and manually attempting to create combinations of meals that fit the given parameters."
 		}
 	]
