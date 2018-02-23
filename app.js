@@ -21,6 +21,7 @@ var about = require('./routes/about');
 var login = require('./routes/login');
 var results = require('./routes/results');
 var error = require('./routes/error');
+var scrape = require('./routes/scrape')
 
 var app = express();
 
@@ -55,6 +56,7 @@ app.get('/login', login.view);
 app.get('/results', results.view);
 app.get('/submit', results.generatePlan);
 app.get('/error', error.view);
+//app.get('/scrape', scrape.convert);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
