@@ -1,101 +1,59 @@
 <html>
 <head>
-    <title>Triton Meal Planner</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/tritonmealplanner.css">
+	<title>Triton Meal Planner</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/tritonmealplanner.css">
 </head>
 <body>
-	<div class="container" style="padding-bottom: 50px;">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <h2><a class="navbar-brand" href="/">Triton Meal Planner</a></h2>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/help">Help</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/about">About <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+	<div class="container justify-content-center" style="margin-top: 60px; margin-bottom: 10px; width: 90%; margin-left: 5%;">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+			<h2><a class="navbar-brand" href="/">Triton Meal Planner</a></h2>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/login">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/help">Help</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="/about">About <span class="sr-only">(current)</span></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-		<div style="padding-top: 20%">
-			<h3>About</h3>
-			<p>
-				Triton Meal Planner is Gold Team's mobile web app, made for COGS 120.
-			</p>
+		{{#each sections}}
+		<div>
+			<h3 class="text-center">{{title}}</h3>
+			<p class="text-justify">{{text}}</p>
 		</div>
+		{{/each}}
 
 		<div>
-			<h3>Point of View</h3>
-			<p>
-				As UCSD students who spend the bulk of our time on-campus, it can be difficult to plan meals since our options are severely limited to HDH's offerings. And even though HDH posts nutritional information for its food items on its website, it is a difficult and tedious process to construct a full meal plan or even planning for a single meal since it involves navigating multiple links before finally settling on something.
-			</p>
-		</div>
-
-		<div>
-			<h3>Inspirations</h3>
-			<p>
-				Some of our current inspirations for this project include Eat This Much (<a href="https://eatthismuch.com">https://eatthismuch.com</a>) and <a href="https://hdh.ucsd.edu/DiningMenus/">the HDH website</a>. Eat This Much is an online meal planner that allows users to enter a calorie goal and preferred type of diet (e.g. Mediterranean), and then generates a meal plan informed by those preferences. This was an inspiration for obvious reasons: our app aims to build on that idea and provide greater options for preferences and to do so for specifically UCSD students. Our second inspiration was HDH's own website, from where we are scraping the data that our web app relies on. The HDH website was an inspiration in that we saw the fairly comprehensive nutritional details it provided on most, if not all, of HDH's offerings to students, but in a way that simply presented the data for students to use for their own purposes instead of building on that data and providing reasonable services for the students who depend on HDH on a daily basis.
-			</p>
-		</div>
-
-		<div>
-			<h3>User Base</h3>
-			<p>
-				Since this web-app is very HDH-specific, the main user base will be UCSD students with dining plans, although it extends to anyone who is on-campus and relies on HDH for food during the day. Although this is fairly restricted, we believe that a simple and specialized site for a smaller target audience would be much more popular and impactful than a more general website that could easily get buried by better existing alternatives for regular meal planning, especially since nothing of the sort exists for regular UCSD students who may rely on HDH.
-			</p>
-		</div>
-
-		<div>
-			<h3>Unique Interactions</h3>
-			<p>
-				The best way to complete the task of constructing a UCSD-specific meal plan without our web app would be to go to the HDH website and manually create one while keeping specific parameters in mind. This involves manually clicking on several links to view a single field on that page (the calorie count), keeping track of items the user is interested in (as well as those items' calorie counts and price points), and juggling all that information and fitting some number of the total possible items into a custom meal plan.
-			</p>
-		</div>
-
-		<div>
-			<h3>Core Interaction</h3>
-			<p>
-				The basic idea is that users (UCSD students) can input meal preferences (e.g. "vegetarian" within "Muir + Revelle + Marshall", "2" meals under "1500" calories and "12" dollars). From these preferences, the mobile web-app formulates a meal plan for the day (e.g. "a Goody's breakfast burrito" + "a taco salad from Pines' Cantina").
-			</p>
-		</div>
-
-		<div>
-			<h3>Alignment with Studio Brief (Automation)</h3>
-			<p>
-				As explained in the POV, constructing a meal plan (or even planning for a single meal) is a difficult and tedious process that involves navigating through multiple links on the HDH website before finally settling on something. This web-app automates the process of navigating through the HDH website and creating a meal plan that fits the given parameters (price point, dietary/caloric restrictions, location preferences, etc.) to save users time daily. The core interaction itself is an automation of this process since it only involves setting preferences as opposed to keeping these preferences in mind and manually attempting to create combinations of meals that fit the given parameters.
-			</p>
-		</div>
-
-		<div>
-			<h3>Code and Build</h3>
-			<p>
+			<h3 class="text-center">Code and Build</h3>
+			<p class="text-justify">
 				The Triton Meal Planner code base is public and can be found <a href="https://github.com/sumeet-bansal/CSE170">on GitHub</a>. Triton Meal Planner is built using Node.js, Express, and SQLite.
 			</p>
 		</div>
 
 		<div>
-			<h3>Gold Team</h3>
-			<ul>
-				<li><a href="https://github.com/sumeet-bansal">Sumeet Bansal</a></li>
-				<li><a href="https://github.com/arossow">Austin Rossow</a></li>
+			<h3 class="text-center">Gold Team</h3>
+			<ul class="text-justify">
+				<li>Sumeet Bansal (<a href="https://github.com/sumeet-bansal">sumeet-bansal</a>)</li>
+				<li>Austin Rossow (<a href="https://github.com/arossow">arossow</a>)</li>
 			</ul>
 		</div>
 
