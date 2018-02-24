@@ -44,28 +44,28 @@
 						<h2> Create a plan:</h2>
 						<h4>
 							<div id="prefOption">
-							dietary restrictions
-							<select class="form-control" name="dietary" id="form">
-								<option value="">none</option>
-								<option>vegetarian</option>
-								<option>vegan</option>
-							</select>
+								dietary restrictions
+								<select class="form-control" name="dietary" id="form">
+									<option value="">none</option>
+									<option>vegetarian</option>
+									<option>vegan</option>
+								</select>
 							</div>
 							<div id="prefOption">
-							location
-							<select class="form-control" name="location">
-								<option value="">UCSD</option>
-								<option>Revelle</option>
-								<option>Muir</option>
-								<option>Warren</option>
-								<option>Sixth</option>
-								<option>ERC</option>
-								<option>Marshall</option>
-							</select>
+								location
+								<select class="form-control" name="location">
+									<option value="">UCSD</option>
+									<option>Revelle</option>
+									<option>Muir</option>
+									<option>Warren</option>
+									<option>Sixth</option>
+									<option>ERC</option>
+									<option>Marshall</option>
+								</select>
 							</div>
 							<div id="prefOption">
 								number of meals
-								<select class="form-control" name="meals">
+								<select class="form-control" name="meals" required>
 									<option>1</option>
 									<option>2</option>
 									<option selected="selected">3</option>
@@ -74,15 +74,15 @@
 								</select>
 							</div>
 							<div id="prefOption">
-							number of calories
-							<div class="form-inline">
-							<input class="form-control col" type="number" placeholder="min" name="min">
-							<input class="form-control col" type="number" placeholder="max" name="max">
-							</div>
+								number of calories
+								<div class="form-inline">
+									<input class="form-control col" type="number" placeholder="min" name="min" required>
+									<input class="form-control col" type="number" placeholder="max" name="max" required>
+								</div>
 							</div>
 							<div id="prefOption">
-							dining dollars
-							<input class="form-control col-4" type="number" placeholder="15" name="price">
+								dining dollars
+								<input class="form-control col-4" type="number" placeholder="15" name="price">
 							</div>
 						</h4>
 					</div>
