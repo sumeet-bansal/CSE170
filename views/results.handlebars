@@ -48,7 +48,14 @@
 				</h6>
 				<h2 class="card-text text-center meal-title">{{item}}</h2>
 				<h6 class="card-subtitle mb-2 text-muted text-center meal-loc">from <a href="{{maplink}}">{{location}}</a></h6>
-				<a href="#" class="card-link text-center swap-link"><h5>Swap Out</h5></a>
+				<div class="row text-center card-link">
+					<div class="col-6">
+						<a href={{nutLink}}><h5>See Details</h5></a>
+					</div>
+					<div class="col-6">
+						<a href="#" class="swap-link"><h5>Swap Out</h5></a>
+					</div>
+				</div>
 			</div>
 		</div>
 		{{/each}}
