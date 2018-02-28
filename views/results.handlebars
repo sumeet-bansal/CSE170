@@ -43,7 +43,10 @@
 		<div class="card text-left" style="margin-top: 1%;">
 			<div class="card-body">
 				<h5 class="card-title meal-index">Meal {{inc @index}}</h5>
-				<h6 class="card-subtitle mb-2 text-muted meal-details">{{calories}} calories, ${{price}}</h6>
+				<h6 class="card-subtitle row text-muted meal-details ">
+					<div class="col-6 text-left" id="item-cal">{{calories}} calories</div>
+					<div class="col-6 text-right" id="item-dd">${{price}}</div>
+				</h6>
 				<h2 class="card-text text-center meal-title">{{item}}</h2>
 				<h6 class="card-subtitle mb-2 text-muted text-center meal-loc">from <a href="{{maplink}}">{{location}}</a></h6>
 				<a href="#" class="card-link text-center swap-link"><h5>Swap Out</h5></a>
