@@ -5,7 +5,6 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-	console.log("\n\n\n");
 	$('.swap-link').click(swap);
 }
 
@@ -44,9 +43,13 @@ function swap(e) {
 		el.find('.swap-link').click(swap);
 
 		item = result.find('.meal-details').html();
-		calsum += parseInt(item.substring(0, item.indexOf(' ')));
-		pricesum += parseFloat(item.substring(item.indexOf('$') + 1));
-		summary = "<h4>Here's your custom meal plan with " + calsum +" calories at $" + pricesum.toFixed(2) +".</h4>";
-		sumel.html(summary);
+		if (item == undefined) {
+			alert("No similar item could be found.");
+		} else {
+			calsum += parseInt(item.substring(0, item.indexOf(' ')));
+			pricesum += parseFloat(item.substring(item.indexOf('$') + 1));
+			summary = "<h4>Here's your custom meal plan with " + calsum +" calories at $" + pricesum.toFixed(2) +".</h4>";
+			sumel.html(summary);
+		}
 	});
 }
