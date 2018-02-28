@@ -8,7 +8,7 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="/css/tritonmealplanner.css">
+	<link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 	<div class="container justify-content-center" style="margin-top: 60px; margin-bottom: 10px;">
@@ -43,7 +43,7 @@
 					<div class="col-10">
 						<h2> Create a plan:</h2>
 						<h4>
-							<div id="prefOption">
+							<div class="prefOption">
 								dietary restrictions
 								<select class="form-control" name="dietary" id="form">
 									<option value="">none</option>
@@ -51,7 +51,7 @@
 									<option>vegan</option>
 								</select>
 							</div>
-							<div id="prefOption">
+							<div class="prefOption">
 								location
 								<select class="form-control" name="location">
 									<option value="">UCSD</option>
@@ -63,7 +63,7 @@
 									<option>Marshall</option>
 								</select>
 							</div>
-							<div id="prefOption">
+							<div class="prefOption">
 								number of meals
 								<select class="form-control" name="meals" required>
 									<option>1</option>
@@ -73,14 +73,14 @@
 									<option>5</option>
 								</select>
 							</div>
-							<div id="prefOption">
+							<div class="prefOption">
 								number of calories
 								<div class="form-inline">
 									<input class="form-control col" type="number" placeholder="min" name="min" required>
 									<input class="form-control col" type="number" placeholder="max" name="max" required>
 								</div>
 							</div>
-							<div class="row" id="prefOption">
+							<div class="row prefOption" style="padding-top: 8%;">
 								<div class="col-4">
 									<input class="form-control text-center" type="number" placeholder="total" name="price">
 								</div>
