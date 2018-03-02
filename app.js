@@ -47,16 +47,14 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-
-// Example route
-// app.get('/users', user.list);
+app.get('/alt', index.viewAlt);
 app.get('/about', about.view);
 app.get('/help', help.view);
 app.get('/login', login.view);
 app.get('/results', results.view);
 app.get('/submit', results.generatePlan);
 app.get('/error', error.view);
-//app.get('/scrape', scrape.convert);
+// app.get('/scrape', scrape.convert);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

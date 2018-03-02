@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>Triton Meal Planner</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container justify-content-center" style="margin-top: 60px; margin-bottom: 10px;">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+			<h2><a class="navbar-brand" href="/">Triton Meal Planner</a></h2>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/login">Login</a>
+					</li>
+					<li class="nav-item">
+						 <a class="nav-link" href="/help">Help</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/about">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<form id="prefsForm" role="form" method="GET" action="/submit">
+			<div class="container" style="padding-top: 5%">
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10">
+						<h4>
+							I am looking for
+							<select class="form-group" name="dietary">
+								<option value="">any</option>
+								<option>vegetarian</option>
+								<option>vegan</option>
+							</select>
+							food, within
+							<select class="form-group" name="location">
+								<option value="">UCSD</option>
+								<option>Revelle</option>
+								<option>Muir</option>
+								<option>Warren</option>
+								<option>Sixth</option>
+								<option>ERC</option>
+								<option>Marshall</option>
+							</select>
+							. I want to eat
+								<select class="form-group" name="meals" required>
+									<option>1</option>
+									<option>2</option>
+									<option selected="selected">3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							 meals today between
+							<input class="form-group col-4" type="number" placeholder="min" name="min" required>
+							and
+							<input class="form-group col-4" type="number" placeholder="max" name="max" required>
+							total calories, and spend fewer than
+							<input class="form-group col-4" type="number" placeholder="total" name="price">
+							dining dollars.
+						</h4>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="container text-center">
+				<a href="results">
+					<input type="submit" id="submitBtn" class="btn btn-lg btn-outline-secondary" value="Generate" style="width: 40%;"></input>
+				</a>
+			</div>
+		</form>
+
+	</div>
+</body>
+</html>
