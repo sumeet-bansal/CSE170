@@ -43,7 +43,7 @@ function swap(e) {
 		el.find('.swap-link').click(swap);
 
 		item = result.find('.meal-details');
-		if (item == undefined) {
+		if (item.html() == null) {
 			alert("No similar item could be found.");
 		} else {
 			calsum += parseInt(item.find('#item-cal').text().substring(0, item.find('#item-cal').text().indexOf(' ')));

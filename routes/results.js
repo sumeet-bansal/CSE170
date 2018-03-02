@@ -10,7 +10,7 @@ exports.generatePlan = function(req, res) {
 	var db = new sqlite3.Database('./data.db', function() {
 		db.serialize(function() {
 			var dietary = ' dietary LIKE "%' + prefs.dietary + '%"';
-			var location = ' AND location LIKE "%' + prefs.location + '%"';
+			var location = ' AND college LIKE "%' + prefs.location + '%"';
 			var num = prefs.meals;
 			var min = prefs.min;
 			var max = prefs.max;
@@ -27,8 +27,8 @@ exports.generatePlan = function(req, res) {
 				budget += row.price;
 				row.price = row.price.toFixed(2);
 				delete row.dietary;
-				row.maplink = getMapLink(row.location);
-				row.location = getDiningHall(row.location);
+				delete row.college;
+				row.maplink = getMapLink(row.dining_hall);
 				meals.push(row);
 			}, function() {
 				if (meals.length >= num) {
@@ -51,36 +51,23 @@ exports.generatePlan = function(req, res) {
 	db.close();
 }
 
-function getDiningHall(loc) {
-	switch(loc) {
-		case 'Sixth':
-			return 'Foodworx';
-		case 'Warren':
-			return 'Earl\'s';
-		case 'Revelle':
-			return '64 Degrees';
-		case 'Muir':
-			return 'Pines';
-		case 'Marshall':
-			return 'Goody\'s';
-		case 'ERC':
-			return 'Cafe Ventanas';
-	}
-}
-
 function getMapLink(loc) {
 	switch(loc) {
-		case 'Sixth':
+		case 'Foodworx':
 			return 'https://goo.gl/maps/pWcSXinwTCQ2';
-		case 'Warren':
+		case 'Earl\'s':
 			return 'https://goo.gl/maps/mfnC7jZGv892';
-		case 'Revelle':
+		case '64 Degrees':
 			return 'https://goo.gl/maps/mj7jS2dPE7t';
-		case 'Muir':
+		case 'Pines':
 			return 'https://goo.gl/maps/CK7ycn3qKwG2';
-		case 'Marshall':
-			return 'https://goo.gl/maps/FiEDAfieYpm';
-		case 'ERC':
+		case 'Cafe Ventanas':
 			return 'https://goo.gl/maps/BWL5Bp1J1xo';
+		case 'Oceanview':
+			return 'https://goo.gl/maps/fm1A8ZhY9L52';
+		case 'Roots':
+			return 'https://goo.gl/maps/ABDsXoWZj7r';
+		case 'Goody\'s':
+			return 'https://goo.gl/maps/FiEDAfieYpm';
 	}
 }

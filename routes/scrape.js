@@ -35,8 +35,8 @@ exports.scraper = function(req,res) {
                 //Use cheerio to load page
                 var $ = cheerio.load(html);
                 //Select element with id of location (e.g. Pines, Foodworx, etc.)
-                var loc = $('#HoursLocations_locationName').text();
-
+                var dining_hall = $('#HoursLocations_locationName').text();
+                var college = $('#HoursLocations_descrip1').text().split(" ")[0];
                 //For each list item in unorder menu list, get item string with name and price/
                 $('ul[class="itemList"] > li > a[href]').each(function (i, e) {
 
@@ -65,11 +65,12 @@ exports.scraper = function(req,res) {
                             var cal$ = cheerio.load(html2);
                             var calories = cal$('table #tblFacts span').text().toString().split(" ");
                             var calData = calories[1];
-                            console.log(name + ": " + calories + "Kcal for " + price + "$ at " + loc + " added to menu.");
+                            console.log(  "college: " + college +", dining_hall: " + dining_hall);
                             if(price) {
                                 var myObj = {
                                     name: name,
-                                    loc: loc,
+                                    college: college,
+                                    dining_hall: dining_hall,
                                     nutLink: fullLink,
                                     price: price,
                                     diet: veg,
@@ -93,8 +94,8 @@ exports.scraper = function(req,res) {
                 //Use cheerio to load page
                 var $ = cheerio.load(html);
                 //Select element with id of location (e.g. Pines, Foodworx, etc.)
-                var loc = $('#HoursLocations_locationName').text();
-
+                var dining_hall = $('#HoursLocations_locationName').text();
+                var college = $('#HoursLocations_descrip1').text().split(" ")[0];
                 //For each list item in unorder menu list, get item string with name and price/
                 $('ul[class="SpecialtyItemList"] > li > a[href]').each(function (i, e) {
 
@@ -123,11 +124,12 @@ exports.scraper = function(req,res) {
                             var cal$ = cheerio.load(html2);
                             var calories = cal$('table #tblFacts span').text().toString().split(" ");
                             var calData = calories[1];
-                            console.log(name + ": " + calories + "Kcal for " + price + "$ at " + loc + " added to menu.");
+                            console.log(  "college: " + college +", dining_hall: " + dining_hall);
                             if(price) {
                                 var myObj = {
                                     name: name,
-                                    loc: loc,
+                                    college: college,
+                                    dining_hall: dining_hall,
                                     nutLink: fullLink,
                                     price: price,
                                     diet: veg,
@@ -147,6 +149,26 @@ exports.scraper = function(req,res) {
     res.send('check console.');
 };
 
+exports.collegeName = function(req, res){
+    var json = require("../FoodsWithCalories.json");
+    for(i in json.table){
+        var coll = json.table[i].college;
+        if(coll == "The") {
+            json.table[i].college = "Sixth";
+            console.log("Sixth");
+        }
+        if(coll == "Earl") {
+            json.table[i].college = "Warren";
+            console.log("Warren");
+        }
+        if(coll == "Thurgood") {
+            json.table[i].college = "Marshall";
+            console.log("Marshall"); 
+        }
+    }
+    res.send("check console.")
+};
+
 exports.convert = function(req,res) {
     var sqlite3 = require('sqlite3').verbose();
 
@@ -155,19 +177,20 @@ exports.convert = function(req,res) {
     var foods = json.table;
     var db = new sqlite3.Database('data.db');
     db.serialize(function () {
-        db.run("CREATE TABLE items (item TEXT, location TEXT, calories INTEGER, price REAL, dietary TEXT, nutLink TEXT)");
+        db.run("CREATE TABLE items (item TEXT, college TEXT, dining_hall TEXT, calories INTEGER, price REAL, dietary TEXT, nutLink TEXT)");
 
-        var stmt = db.prepare("INSERT INTO items VALUES (?,?,?,?,?,?)");
+        var stmt = db.prepare("INSERT INTO items VALUES (?,?,?,?,?,?,?)");
 
         for (var ind in foods) {
-            var n = foods[ind].name;
-            var l = foods[ind].loc;
-            var c = foods[ind].cal;
-            var p = foods[ind].price;
-            var d = foods[ind].diet;
+            var name = foods[ind].name;
+            var college = foods[ind].college;
+            var dining_hall = foods[ind].dining_hall;
+            var cal = foods[ind].cal;
+            var price = foods[ind].price;
+            var diet = foods[ind].diet;
             var nl = foods[ind].nutLink;
-            if (p) {
-                stmt.run(n, l, c, p, d, nl);
+            if (price) {
+                stmt.run(name, college, dining_hall, cal, price, diet, nl);
             }
         }
         stmt.finalize();
