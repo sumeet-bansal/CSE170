@@ -7,10 +7,15 @@ exports.view = function(req, res) {
 
 exports.generatePlan = function(req, res) {
 	prefs = req.query;
+	console.log(prefs);
 	var db = new sqlite3.Database('./data.db', function() {
 		db.serialize(function() {
 			var dietary = ' dietary LIKE "%' + prefs.dietary + '%"';
-			var location = ' AND college LIKE "%' + prefs.location + '%"';
+			var location = ' AND college IN (\'' + prefs.location[0] + '\'';
+			for (var i = 1; i < prefs.location.length; i++) {
+				location += ', \'' + prefs.location[i] + '\''
+			}
+			location += ')';
 			var num = prefs.meals;
 			var min = prefs.min;
 			var max = prefs.max;
