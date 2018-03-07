@@ -10,6 +10,8 @@ function initializePage() {
 
 function swap(e) {
 	e.preventDefault();
+	ga('create', 'UA-115344547-1', 'auto');
+	ga('send', 'event', 'swapout', 'click');
 
 	var sumel = $(this).closest('.container').find('.summary');
 	var summary = sumel.text();
