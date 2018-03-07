@@ -1,25 +1,23 @@
 <html>
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115344547-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-115344547-1');
-</script>
-<!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115344547-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-115344547-1');
+	</script>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-115344547-1', 'auto');
-ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
+	ga('create', 'UA-115344547-1', 'auto');
+	ga('send', 'pageview');
+	</script>
 
 	<title>Triton Meal Planner</title>
 	<meta charset="utf-8">
@@ -64,8 +62,7 @@ ga('send', 'pageview');
 								<option>vegan</option>
 							</select>
 							food, within
-							<select class="form-group" name="location">
-								<option value="">UCSD</option>
+							<select class="form-control" name="location" multiple data-actions-box="true">
 								<option>Revelle</option>
 								<option>Muir</option>
 								<option>Warren</option>
@@ -73,21 +70,23 @@ ga('send', 'pageview');
 								<option>ERC</option>
 								<option>Marshall</option>
 							</select>
-							. I want to eat
-								<select class="form-group" name="meals" required>
-									<option>1</option>
-									<option>2</option>
-									<option selected="selected">3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							 meals today between
-							<input class="form-group col-4" type="number" placeholder="min" name="min" required>
-							and
-							<input class="form-group col-4" type="number" placeholder="max" name="max" required>
-							total calories, and spend fewer than
-							<input class="form-group col-4" type="number" placeholder="total" name="price">
-							dining dollars.
+							<div style="padding-top: 5%;">
+								I want to eat
+									<select class="form-group" name="meals" required>
+										<option>1</option>
+										<option>2</option>
+										<option selected="selected">3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								 meals today between
+								<input class="form-group col-4" type="number" placeholder="min" name="min" required>
+								and
+								<input class="form-group col-4" type="number" placeholder="max" name="max" required>
+								total calories, and spend fewer than
+								<input class="form-group col-4" type="number" placeholder="total" name="price">
+								dining dollars.
+							<div>
 						</h4>
 					</div>
 				</div>
@@ -96,7 +95,7 @@ ga('send', 'pageview');
 			<div class="container text-center">
 				<a href="results">
 					<input type="submit" id="submitBtn" class="btn btn-lg btn-outline-secondary" onclick="ga('create', 'UA-115344547-1', 'auto');
-	ga('send', 'event', 'generate', 'click');" value="Generate" style="width: 40%;"></input>
+					ga('send', 'event', 'generate', 'click');" value="Generate" style="width: 40%;"></input>
 				</a>
 			</div>
 		</form>
