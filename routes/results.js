@@ -11,11 +11,18 @@ exports.generatePlan = function(req, res) {
 	var db = new sqlite3.Database('./data.db', function() {
 		db.serialize(function() {
 			var dietary = ' dietary LIKE "%' + prefs.dietary + '%"';
-			var location = ' AND college IN (\'' + prefs.location[0] + '\'';
-			for (var i = 1; i < prefs.location.length; i++) {
-				location += ', \'' + prefs.location[i] + '\''
+			var location = '';
+			if (prefs.hasOwnProperty('location')) {
+				if (typeof(prefs.location) == 'string') {
+					location = ' AND college = \'' + prefs.location +'\'';
+				} else {
+					location = ' AND college IN (\'' + prefs.location[0] + '\'';
+					for (var i = 1; i < prefs.location.length; i++) {
+						location += ', \'' + prefs.location[i] + '\''
+					}
+					location += ')';
+				}
 			}
-			location += ')';
 			var num = prefs.meals;
 			var min = prefs.min;
 			var max = prefs.max;
