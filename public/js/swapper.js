@@ -29,14 +29,18 @@ function swap(e) {
 	pricesum -= price;
 
 	var dietary = $('#dietary').text();
-	var location = $('#location').text();
+	var location = $('#location').text().split(',');
+	var locparam = '';
+	for (var i = 0; i < location.length; i++) {
+		locparam += '&location=' + location[i];
+	}
 	var min = parseInt($('#lower-bound').text());
 	var max = parseInt($('#upper-bound').text());
 
 	min -= calsum;
 	max -= calsum;
 
-	var reqlink = '/submit?dietary=' + dietary + '&location=' + location + '&meals=1&min=' + min + '&max=' + max;
+	var reqlink = '/submit?dietary=' + dietary + locparam + '&meals=1&min=' + min + '&max=' + max;
 
 	$.get(reqlink, function(result) {
 		result = $(result).find('.card-body');
