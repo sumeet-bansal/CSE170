@@ -74,12 +74,16 @@ function getMapLink(loc) {
 		case 'Pines':
 			return 'https://goo.gl/maps/CK7ycn3qKwG2';
 		case 'Cafe Ventanas':
+		case 'Café Ventanas':
 			return 'https://goo.gl/maps/BWL5Bp1J1xo';
 		case 'Oceanview':
+		case 'OceanView':
 			return 'https://goo.gl/maps/fm1A8ZhY9L52';
 		case 'Roots':
 			return 'https://goo.gl/maps/ABDsXoWZj7r';
 		case 'Goody\'s':
 			return 'https://goo.gl/maps/FiEDAfieYpm';
+		case 'Canyon Vista':
+			return 'https://goo.gl/maps/58KCzEwnNy42';
 	}
 }
