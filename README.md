@@ -1,5 +1,19 @@
 ## Triton Meal Planner
 
+### Table of Contents
++ [POV](#pov)
++ [Inspirations](#inspirations)
++ [User Base](#user-base)
++ [Unique Interactions](#unique-interactions)
++ [Core Interaction](#core-interaction)
++ [Alignment with Studio Brief (Automation)](#alignment-with-studio-brief-automation)
++ [Task Descriptions](#task-descriptions)
++ [Workflows](#workflows)
++ [Elevator Pitch](#elevator-pitch)
++ [Walkthrough Script](#walkthrough-script)
++ [Code and Build](#code-and-build)
++ [Contributors](#contributors)
+
 ### POV
 As UCSD students who spend the bulk of our time on-campus, it can be difficult to plan meals since our options are severely limited to HDH's offerings. And even though HDH posts nutritional information for its food items on its website, it is a difficult and tedious process to construct a full meal plan or even planning for a single meal since it involves navigating multiple links before finally settling on something.
 
@@ -18,9 +32,36 @@ The basic idea is that users (UCSD students) can input meal preferences (e.g. "v
 ### Alignment with Studio Brief (Automation)
 As explained in the POV, constructing a meal plan (or even planning for a single meal) is a difficult and tedious process that involves navigating through multiple links on the HDH website before finally settling on something. This web-app automates the process of navigating through the HDH website and creating a meal plan that fits the given parameters (price point, dietary/caloric restrictions, location preferences, etc.) to save users time daily. The core interaction itself is an automation of this process since it only involves setting preferences as opposed to keeping these preferences in mind and manually attempting to create combinations of meals that fit the given parameters.
 
-### Task Description
-Create a meal plan for yourself for tomorrow, assuming you will be eating at the dining hall of your home college (e.g. Sixth, Muir) and have plenty of dining dollars.
+### Task Descriptions
+#### Make a meal plan for Joe, a UCSD student who's trying to bulk up and needs to eat between 3000 and 4000 calories a day, across 5 meals. Try to make the plan as varied as possible.
+1. Go the home screen.
+2. Use the meal plan generator to make a plan with between 3000 and 4000 calories for 5 meals.
+3. Swap out any repeat meals (e.g. if some sort of salad comes up twice, swap one of the two out).
+
+#### Make a meal plan for yourself.
+1. Hit "Start Over" if still on the generated meal plan screen or the Triton Meal Planner header on the navbar.
+2. Enter your preferences in the meal generator.
+3. If no results appear, try again but widen your parameters.
+
+#### Suppose you will be in the Basement of the computer science building all day, and only want to eat in Warren to save time. Make a meal plan and find directions to the dining hall in Warren.
+1. Go to the homescreen again.
+2. Make a meal plan that only has meals from Warren so you leave the lab as few times as possible.
+3. Choose however many calories you think you will need for one-day sitting in a lab.
+4. On the results page, click on the name of the dining hall to get directions.
+
+### Workflows
+Our prototype has one primary user task: generating a meal plan (as explained above). Besides that, it has the user task of swapping out individual items from entire meal plans. These two user tasks form the bulk of our functionality since our app is specifically for generating daily meal plans, which is a fairly focused idea. Additionally, our app has various secondary screens such as Help, About, and Login pages, although there is currently no functionality for logged in users.
+
+### Elevator Pitch
+There's a reason HDH is consistently ranked pretty low relative to the rest of the administration: it kinda sucks. As UCSD students who spend the bulk of our time on-campus, it can be difficult to plan meals since our options are limited to HDH's offerings. It's a difficult and tedious process to construct a full meal plan or even plan for a single meal, and HDH's website isn't much help. Our web-app, Triton Meal Planner, automates that process of creating a meal plan that fits dietary and caloric restrictions and location preferences to save users time daily.
+
+### Walkthrough Script
+Joe is currently bulking: he's trying to get big so he needs to eat between 2000 and 3000 calories a day, preferably in 3 meals. His only dietary restriction is that he's vegetarian and he has a board so he can get around campus pretty easily. But still, he lives in Warren and doesn't want to have to go to Revelle to eat. Somewhere in the Sixth/Warren/Marshall vicinity is good, maybe even Muir. And he knows you can't put a price tag on fitness so he allocates a generous $20 a day for eating since, as we all know, HDH is absurdly overpriced. Joe isn't a fan of [food] so let's swap that out real quick. That's better. And still in his calorie range and dining dollar limit to boot.
+
+### Code and Build
+The Triton Meal Planner code base is public and can be found on [GitHub](https://github.com/sumeet-bansal/CSE170). Triton Meal Planner is built using Node.js, Express, and SQLite.
+
 
 ### Contributors
-+ [Sumeet Bansal](https://github.com/sumeet-bansal)
-+ [Austin Rossow](https://github.com/Arossow)
++ Sumeet Bansal ([sumeet-bansal](https://github.com/sumeet-bansal))
++ Austin Rossow ([arossow](https://github.com/Arossow))
